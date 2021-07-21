@@ -38,7 +38,7 @@ jobs:
           sudo -s eval "$sysreqs"
       - name: Install dependencies
         run: |
-          options(repos = c(rstudio = 'https://rstudio.r-universe.dev',eddelbuettel = 'https://eddelbuettel.r-universe.dev', datatble = 'https://Rdatatable.gitlab.io/data.table', henrikbengtsson = 'https://henrikbengtsson.r-universe.dev', CRAN = 'https://cran.rstudio.com'))
+          options(pkgType = "binary", repos = c(carpentries = 'https://carpentries.r-universe.dev', rstudio = 'https://rstudio.r-universe.dev',eddelbuettel = 'https://eddelbuettel.r-universe.dev', datatble = 'https://Rdatatable.gitlab.io/data.table', henrikbengtsson = 'https://henrikbengtsson.r-universe.dev', CRAN = 'https://cran.rstudio.com'))
           remotes::install_deps(dependencies = TRUE)
           remotes::install_cran("rcmdcheck")
           remotes::install_github("hrbrmstr/slugify")
