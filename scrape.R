@@ -1,5 +1,4 @@
 #!/usr/bin/Rscript
-setwd("C:/Users/54011/Documents/pandemic/cdc-scraper")
 download.file(
   "https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccinati
 on_county_condensed_data",
