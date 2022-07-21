@@ -20,10 +20,13 @@ dat_information <- data.frame(
   group_by(pull_date) %>%
   filter(pull_time==max(pull_time))
 
-dat_raw <- map(dat_information$county_details, jsonlite::read_json)
+quick_json_read <- function(x){
+  RcppSimdJson::fload(x)$vaccination_county_condensed_data
+}
 
-a <- lapply(dat_raw, `[[`, 2)
-b <- data.table::rbindlist(lapply(a, data.table::rbindlist, fill = TRUE), fill = TRUE)
+dat_raw <- map(dat_information$county_details, quick_json_read)
+
+b <- data.table::rbindlist(dat_raw, fill = TRUE)
 
 dat_out <- b[StateName=="North Carolina"]
 
