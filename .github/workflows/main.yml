@@ -1,5 +1,5 @@
 name: Update with Latest Data
-
+runs-on: self-hosted
 on:
   push:
     branches: [ main ]
