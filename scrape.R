@@ -7,13 +7,13 @@ slugify_date <- function(x){
 }
 ping_time <- slugify_date(Sys.time())
 
-download.file(
+try(download.file(
   "https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=vaccinati
 on_county_condensed_data",
 sprintf("data/county-covid/%s.json", ping_time),
 quiet = TRUE,
 cacheOK = FALSE
-)
+))
 
 download.file(
 	"https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=integrated_county_latest_by_state_fips_37"
