@@ -15,7 +15,7 @@ cacheOK = FALSE
 ))
 
 download.file(
-	"https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=integrated_county_latest_by_state_fips_37"
+	"https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=integrated_county_latest_by_state_fips_37",
 #"https://covid.cdc.gov/covid-data-tracker/COVIDData/getAjaxData?id=integrated_county_latest_external_data",
 sprintf("data/county-detail/%s.json", ping_time),
 quiet = TRUE,
